@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+        }
+
+        .hero {
+            background: url('background.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            position: relative;
+            color: white;
+            z-index: 1;
+        }
+
+        .content h1 {
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: absolute;
+            width: 100%;
+            top: 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: white;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #00d1b2;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: white;
+            padding: 12px 25px;
+            border: 2px solid #00d1b2;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: 0.3s;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background: #00d1b2;
+            color: black;
+        }
+
+        .btn-secondary {
+            border-color: white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <h1 class="logo">INterior</h1>
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">BEDROOM</a></li>
+                <li><a href="#">DINING</a></li>
+                <li><a href="#">KITCHEN</a></li>
+                <li><a href="#">BACKYARD</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="content">
+            <h1>DESIGN YOUR HOUSE</h1>
+            <p>Subscribe Easy Tutorials YouTube Channel to watch more videos, press the bell icon and get updates.</p>
+            <div class="buttons">
+                <a href="#" class="btn">SEE MORE</a>
+                <a href="#" class="btn btn-secondary">SUBSCRIBE</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
