@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #dfffd6;
+        }
+
+        .container {
+            background: #8fd694;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        h2 {
+            color: darkgreen;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background: navy;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: darkblue;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Tip Calculator</h2>
+        <p>Enter the bill amount and tip percentage to calculate the total.</p>
+
+        <label for="billAmount">Bill amount:</label>
+        <input type="number" id="billAmount" placeholder="Enter bill amount">
+
+        <label for="tipPercentage">Tip percentage:</label>
+        <input type="number" id="tipPercentage" placeholder="Enter tip percentage">
+
+        <button onclick="calculateTip()">Calculate</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateTip() {
+            // Get input values
+            let billAmount = parseFloat(document.getElementById("billAmount").value);
+            let tipPercentage = parseFloat(document.getElementById("tipPercentage").value);
+
+            // Validate input
+            if (isNaN(billAmount) || isNaN(tipPercentage) || billAmount <= 0 || tipPercentage < 0) {
+                document.getElementById("result").innerHTML = "Please enter valid values!";
+                return;
+            }
+
+            // Calculate tip and total bill
+            let tipAmount = (billAmount * tipPercentage) / 100;
+            let totalAmount = billAmount + tipAmount;
+
+            // Display result
+            document.getElementById("result").innerHTML = 
+                `Tip: $${tipAmount.toFixed(2)} <br> Total: $${totalAmount.toFixed(2)}`;
+        }
+    </script>
+
+</body>
+</html>
